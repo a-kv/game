@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Item from "./components/Item";
 import logo from './assets/logo.gif'
 import audio from './assets/prikolnoe-chavkane.mp3';
 import Items from "./components/Items";
@@ -24,20 +23,17 @@ class App extends React.Component {
             }
         )
     }
+
     makeRandomIndex = () => {
         this.setState({randomIndex: Math.floor(Math.random() * this.state.items.length)})
     }
 
-    // shouldComponentUpdate() {
-    //     this.onClickUp()
-    // }
 
     componentDidMount() {
         setInterval(this.makeRandomIndex, this.state.speed)
     }
 
     render = () => {
-        // let newItems = this.state.items.map(i => <Item onClick={this.onClickUp}/> )
         return (
             <div className="App">
                 <img src={logo}/>
