@@ -1,50 +1,62 @@
 import React from 'react';
 import './App.css';
-import logo from './assets/logo.gif'
 import audio from './assets/prikolnoe-chavkane.mp3';
-import Items from "./components/Items";
+import logo from './assets/logo.gif';
+import {connect} from "react-redux";
+import {incCounterAC, makeRandomIndexAC} from "./reduser";
+import Items from "./components/Items/Items";
 
 class App extends React.Component {
-    state = {
-        counter: 0,
-        speed: 1000,
-        items: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-        randomIndex: 8
+
+    makeRandomIndex = () => {
+        this.props.makeRandomInd(Math.floor(Math.random() * this.props.items.length))
+    }
+
+    componentDidMount() {
+        setInterval(this.makeRandomIndex, this.props.speed)
     }
 
     onClickUp = () => {
         new Audio(audio).play()
-        this.setState({
-            counter: this.state.counter + 1
-        })
-
-        this.setState({
-                speed: this.state.speed - 50
-            }
-        )
-    }
-
-    makeRandomIndex = () => {
-        this.setState({randomIndex: Math.floor(Math.random() * this.state.items.length)})
-    }
-
-
-    componentDidMount() {
-        setInterval(this.makeRandomIndex, this.state.speed)
+        this.props.incCounter(this.props.counter)
     }
 
     render = () => {
         return (
             <div className="App">
-                <img src={logo}/>
-                <span>{this.state.counter}</span>
-                <div className="container">
-                    <Items randomIndex={this.state.randomIndex} items={this.state.items} onClick={this.onClickUp}/>
-
+                <img src={logo} alt="logo"/>
+                <span>{this.props.counter}</span>
+                <div className={'container'}>
+                    <Items
+                        items={this.props.items}
+                        randomIndex={this.props.randomIndex}
+                        onClick={this.onClickUp}/>
                 </div>
             </div>
         );
     }
 }
 
-export default App;
+const mapStateToProps = (state) =>{
+    return {
+        counter: state.counter,
+        items: state.items,
+        randomIndex: state.randomIndex,
+        speed: state.speed
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return{
+        incCounter: (counter) =>{
+            dispatch(incCounterAC(counter));
+        },
+        makeRandomInd: (randomIndex) => {
+            dispatch(makeRandomIndexAC(randomIndex));
+        }
+    }
+
+}
+
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+export default ConnectedApp;
+
