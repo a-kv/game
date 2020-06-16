@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/my-game/static/css/main.c1d8cb64.chunk.css",
+    "main.js": "/my-game/static/js/main.00b126b6.chunk.js",
+    "main.js.map": "/my-game/static/js/main.00b126b6.chunk.js.map",
+    "runtime-main.js": "/my-game/static/js/runtime-main.7836311e.js",
+    "runtime-main.js.map": "/my-game/static/js/runtime-main.7836311e.js.map",
+    "static/js/2.20fe6ecd.chunk.js": "/my-game/static/js/2.20fe6ecd.chunk.js",
+    "static/js/2.20fe6ecd.chunk.js.map": "/my-game/static/js/2.20fe6ecd.chunk.js.map",
+    "index.html": "/my-game/index.html",
+    "precache-manifest.ad3b76e8adc5a65dd346261e1fe0d10f.js": "/my-game/precache-manifest.ad3b76e8adc5a65dd346261e1fe0d10f.js",
+    "service-worker.js": "/my-game/service-worker.js",
+    "static/css/main.c1d8cb64.chunk.css.map": "/my-game/static/css/main.c1d8cb64.chunk.css.map",
+    "static/js/2.20fe6ecd.chunk.js.LICENSE.txt": "/my-game/static/js/2.20fe6ecd.chunk.js.LICENSE.txt",
+    "static/media/logo.gif": "/my-game/static/media/logo.9a80272f.gif",
+    "static/media/mic.png": "/my-game/static/media/mic.ebd22e58.png",
+    "static/media/App.css": "/my-game/static/media/piz.6f7f9879.cur",
+    "static/media/prikolnoe-chavkane.mp3": "/my-game/static/media/prikolnoe-chavkane.fc3397be.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7836311e.js",
+    "static/js/2.20fe6ecd.chunk.js",
+    "static/css/main.c1d8cb64.chunk.css",
+    "static/js/main.00b126b6.chunk.js"
+  ]
+}
